@@ -2,9 +2,11 @@
 #include <U8x8lib.h>
 #include <Wire.h>
 #include "Adafruit_MCP23017.h"
-#include <eagle_soc.h>
 #include <Adafruit_GFX.h>    
 #include <Adafruit_ST7735.h> 
+#include <Adafruit_ST7735.h> 
+#include <Adafruit_NeoPixel.h>
+
 
 //PINS
 #define LEDPIN         D4
@@ -18,8 +20,7 @@
 #define TFT_CS        -1
 
 //FOR RGB LED
-#define LEDTIMINGCORRECTION -17 // [-1][-32] stable range
-static const uint32_t T0H = F_CPU/2500000, T1H  = F_CPU/1250000, TTOT = F_CPU/800000;
+#define NUMPIXELS 1
 
 //FOR OLED
 //U8X8_SSD1306_128X64_NONAME_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE); 	      
@@ -27,42 +28,17 @@ U8X8_SH1106_128X64_NONAME_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 
 Adafruit_MCP23017 mcp;
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
-
-
-static uint32_t _getCycleCount() __attribute__((always_inline));
-static inline uint32_t _getCycleCount() {
-  uint32_t ccount;
-  __asm__ __volatile__("rsr %0,ccount":"=a" (ccount));
-  return ccount;
-}
-
-static void ICACHE_RAM_ATTR ledSet(uint8_t rled, uint8_t gled, uint8_t bled) {
- uint8_t i;
- uint32_t t, t0h, t1h, ttot, startTime, pixel, mask, pinMask;
-  
-  pixel |= gled; pixel <<= 8; pixel |= rled; pixel <<= 8; pixel |= bled;
-  mask = 0x800000; pinMask = _BV(LEDPIN);
-  startTime = 0;
-  t0h = T0H; t1h = T1H; ttot = TTOT;
-  os_intr_lock();
-  for (i = 0; i < 24; i++) {
-    if (pixel & mask) t = t1h; 
-    else t = t0h;
-    while (_getCycleCount() < startTime + ttot);    // wait for next bit
-    startTime=_getCycleCount() + LEDTIMINGCORRECTION;
-    GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, pinMask); // digitalWrite HIGH
-    while (_getCycleCount() < startTime + t);       // wait HIGH
-    GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, pinMask); // digitalWrite LOW
-    mask >>= 1;
-  }
-  os_intr_unlock();
-}
+Adafruit_NeoPixel pixels(NUMPIXELS, LEDPIN);
 
 
 void setup(){
 //  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
   Serial.begin(74880);
-  pinMode(LEDPIN, OUTPUT);
+  pixels.begin();
+  pixels.clear();
+  delay (100);
+  pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
+  pixels.show();
   pinMode(SOUNDPIN, OUTPUT);
   tone(SOUNDPIN, 200);
   delay(100);  
@@ -70,7 +46,6 @@ void setup(){
   delay(100);
   noTone(SOUNDPIN);
   mcp.begin(0); //actially i2c addrees of mcp23017 is 0x20 but library ises assdr = (0x20 || (parameter X of mcp.begin(X)));
-  ledSet(0,0,0);
   u8x8.begin();
   u8x8.setFont(u8x8_font_chroma48medium8_r);  
   for (int i=0;i<8;i++){  
@@ -98,9 +73,18 @@ void loop(){
  }
 
  if (countled){
-    if (rnd==0) {ledSet(countled*20,0,0); tft.setTextColor(ST77XX_RED); tft.fillRect(0,100,128,28,ST77XX_RED);}
-    if (rnd==1) {ledSet(0,countled*20,0); tft.setTextColor(ST77XX_GREEN); tft.fillRect(0,100,128,28,ST77XX_GREEN);}
-    if (rnd==2) {ledSet(0,0,countled*20); tft.setTextColor(ST77XX_BLUE); tft.fillRect(0,100,128,28,ST77XX_BLUE);}
+    if (rnd==0) {
+      pixels.setPixelColor(0, pixels.Color(countled*20, 0, 0)); 
+      tft.setTextColor(ST77XX_RED); 
+      tft.fillRect(0,100,128,28,ST77XX_RED);}
+    if (rnd==1) {
+      pixels.setPixelColor(0, pixels.Color(0, countled*20, 0)); 
+      tft.setTextColor(ST77XX_GREEN); 
+      tft.fillRect(0,100,128,28,ST77XX_GREEN);}
+    if (rnd==2) {
+      pixels.setPixelColor(0, pixels.Color(0, 0, countled*20)); 
+      tft.setTextColor(ST77XX_BLUE); 
+      tft.fillRect(0,100,128,28,ST77XX_BLUE);}
     tft.fillRect(0,0,128,16,ST77XX_BLACK);
     tft.fillRect(0,64,16,16,ST77XX_BLACK);
     tft.setCursor(0, 50);
@@ -112,7 +96,7 @@ void loop(){
  else{ 
     rnd=random(0,3);
     noTone(SOUNDPIN);
-    ledSet(0,0,0);
+    pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
     tft.setCursor(0, 0);
     tft.setTextSize(1);
     tft.print("Millis: "); 
@@ -120,5 +104,6 @@ void loop(){
     tft.fillRect(0,48,120,32,ST77XX_BLACK);
     tft.println(millis());
  }
+ pixels.show();
  delay(100);
 }

@@ -7,3 +7,5 @@ for first test of ESPboy device after assembling:
 - Display OLED/TFT
 - RGB led
 - Buzzer/Speaker
+
+https://www.youtube.com/channel/UCsMjlCb8CK-Cw54lRrkpbQw
