@@ -6,6 +6,7 @@
 #include <Adafruit_ST7735.h> 
 #include <Adafruit_ST7735.h> 
 #include <Adafruit_NeoPixel.h>
+#include "ESPboyLogo.h"
 
 
 //PINS
@@ -55,6 +56,16 @@ void setup(){
   mcp.digitalWrite(PIN_CS_LCD_MCP23017, LOW);
   tft.initR(INITR_144GREENTAB);
   tft.setRotation(0);
+  tft.fillScreen(ST77XX_BLACK);
+
+  //draw ESPboylogo  
+  delay(500);
+  tft.drawXBitmap(30, 24, ESPboyLogo, 68, 64, ST77XX_YELLOW);
+  tft.setTextSize(1);
+  tft.setTextColor(ST77XX_YELLOW);
+  tft.setCursor(0,102);
+  tft.print ("      First test");
+  delay(3000);
   tft.fillScreen(ST77XX_BLACK);
 }
 
