@@ -36,8 +36,8 @@ void setup(){
 //  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
   Serial.begin(74880);
   pixels.begin();
+  delay (150);
   pixels.clear();
-  delay (100);
   pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
   pixels.show();
   pinMode(SOUNDPIN, OUTPUT);
@@ -46,26 +46,31 @@ void setup(){
   tone(SOUNDPIN, 100);
   delay(100);
   noTone(SOUNDPIN);
-  mcp.begin(0); //actially i2c addrees of mcp23017 is 0x20 but library ises assdr = (0x20 || (parameter X of mcp.begin(X)));
+  digitalWrite(SOUNDPIN, HIGH);
   u8x8.begin();
+  delay (150);
   u8x8.setFont(u8x8_font_chroma48medium8_r);  
+  mcp.begin(0); //actially i2c addrees of mcp23017 is 0x20 but library ises assdr = (0x20 || (parameter X of mcp.begin(X)));
+  delay (150);
   for (int i=0;i<8;i++){  
      mcp.pinMode(i, INPUT);
-     mcp.pullUp(i, HIGH);}
+     delay(10);
+     mcp.pullUp(i, HIGH);
+     delay(10);}
   mcp.pinMode(PIN_CS_LCD_MCP23017, OUTPUT);
   mcp.digitalWrite(PIN_CS_LCD_MCP23017, LOW);
   tft.initR(INITR_144GREENTAB);
+  delay (200);
   tft.setRotation(0);
   tft.fillScreen(ST77XX_BLACK);
 
   //draw ESPboylogo  
-  delay(500);
   tft.drawXBitmap(30, 24, ESPboyLogo, 68, 64, ST77XX_YELLOW);
   tft.setTextSize(1);
   tft.setTextColor(ST77XX_YELLOW);
   tft.setCursor(0,102);
   tft.print ("      First test");
-  delay(3000);
+  delay(2000);
   tft.fillScreen(ST77XX_BLACK);
 }
 
@@ -107,6 +112,7 @@ void loop(){
  else{ 
     rnd=random(0,3);
     noTone(SOUNDPIN);
+    digitalWrite(SOUNDPIN, HIGH);
     pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
     tft.setCursor(0, 0);
     tft.setTextSize(1);
