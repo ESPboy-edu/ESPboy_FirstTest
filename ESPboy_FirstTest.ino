@@ -1,21 +1,19 @@
-#include <Arduino.h>
-#include <U8x8lib.h>
-#include <Wire.h>
-#include "Adafruit_MCP23017.h"
-#include <Adafruit_GFX.h>    
-#include <Adafruit_ST7735.h> 
-#include <Adafruit_ST7735.h> 
 #include <Adafruit_NeoPixel.h>
+#include <Adafruit_MCP23017.h>
+#include <Adafruit_ST7735.h> 
+#include <Adafruit_GFX.h> 
+#include <U8x8lib.h>
+#include <Wire.h>   
+#include <ESP8266WiFi.h>
 #include "ESPboyLogo.h"
-
 
 //PINS
 #define LEDPIN         D4
 #define SOUNDPIN       D3
-#define PIN_CS_LCD_MCP23017 8
 
-//RGB LED
+
 //SPI for LCD
+#define csTFTMCP23017pin 8
 #define TFT_RST       -1
 #define TFT_DC        D8
 #define TFT_CS        -1
@@ -33,43 +31,49 @@ Adafruit_NeoPixel pixels(NUMPIXELS, LEDPIN);
 
 
 void setup(){
-//  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
-  Serial.begin(74880);
+  Serial.begin(115200); //serial init
+  delay (100);
+  WiFi.mode(WIFI_OFF); // to safe some battery power
+
+//LED init
+  pinMode(LEDpin, OUTPUT);
   pixels.begin();
-  delay (150);
-  pixels.clear();
-  pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
+  delay (100);
+  pixels.setPixelColor(0, pixels.Color(0,0,0));
   pixels.show();
-  pinMode(SOUNDPIN, OUTPUT);
-  tone(SOUNDPIN, 200);
-  delay(100);  
-  tone(SOUNDPIN, 100);
-  delay(100);
-  noTone(SOUNDPIN);
-  digitalWrite(SOUNDPIN, HIGH);
-  u8x8.begin();
-  delay (150);
-  u8x8.setFont(u8x8_font_chroma48medium8_r);  
-  mcp.begin(0); //actially i2c addrees of mcp23017 is 0x20 but library ises assdr = (0x20 || (parameter X of mcp.begin(X)));
-  delay (150);
-  for (int i=0;i<8;i++){  
-     mcp.pinMode(i, INPUT);
-     delay(10);
-     mcp.pullUp(i, HIGH);
-     delay(10);}
-  mcp.pinMode(PIN_CS_LCD_MCP23017, OUTPUT);
-  mcp.digitalWrite(PIN_CS_LCD_MCP23017, LOW);
+
+//TFT init     
+  mcp.pinMode(csTFTMCP23017pin, OUTPUT);
+  mcp.digitalWrite(csTFTMCP23017pin, LOW);
   tft.initR(INITR_144GREENTAB);
-  delay (200);
+  delay (100);
   tft.setRotation(0);
   tft.fillScreen(ST77XX_BLACK);
 
-  //draw ESPboylogo  
+//draw ESPboylogo  
   tft.drawXBitmap(30, 24, ESPboyLogo, 68, 64, ST77XX_YELLOW);
   tft.setTextSize(1);
   tft.setTextColor(ST77XX_YELLOW);
-  tft.setCursor(0,102);
-  tft.print ("      First test");
+  tft.setCursor(36,102);
+  tft.print ("First test");
+
+//sound init and test
+  pinMode(SOUNDpin, OUTPUT);
+  tone(SOUNDpin, 200, 100); 
+  tone(SOUNDpin, 100, 100);
+  noTone(SOUNDpin);
+
+//OLED init
+  u8x8.setFont(u8x8_font_chroma48medium8_r);  
+
+//buttons on mcp23017 init
+  mcp.begin(MCP23017address);
+  delay (100);
+  for (int i=0;i<6;i++){  
+     mcp.pinMode(i, INPUT);
+     mcp.pullUp(i, HIGH);}
+
+//clear TFT
   delay(2000);
   tft.fillScreen(ST77XX_BLACK);
 }
