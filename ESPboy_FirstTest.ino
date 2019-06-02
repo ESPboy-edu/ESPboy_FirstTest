@@ -77,6 +77,7 @@ void setup(){
   digitalWrite(SOUNDPIN, HIGH);
 
 //OLED init
+  u8x8.begin();
   u8x8.setFont(u8x8_font_chroma48medium8_r);  
 
 //DAC init 
@@ -127,7 +128,7 @@ void loop(){
  else{ 
     rnd=random(0,3);
     noTone(SOUNDPIN);
-    digitalWrite(SOUNDPIN, HIGH);
+//    digitalWrite(SOUNDPIN, HIGH);
     pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
     tft.setCursor(0, 0);
     tft.setTextSize(1);
