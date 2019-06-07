@@ -57,7 +57,7 @@ void setup(){
   mcp.digitalWrite(csTFTMCP23017pin, LOW);
   tft.initR(INITR_144GREENTAB);
   delay (100);
-  tft.setRotation(0);
+  tft.setRotation(2);
   tft.fillScreen(ST77XX_BLACK);
 
 //draw ESPboylogo  
