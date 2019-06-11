@@ -126,7 +126,7 @@ void loop(){
     tft.fillRect(0,64,16,16,ST77XX_BLACK);
     tft.println(countled);
     tone(SOUNDPIN, countled*150);
-    lcdbright += 10;    
+    lcdbright += 10 * countled;    
     if (lcdbright > 700) lcdbright = 300;
     dac.setVoltage(lcdbright, false);
  }
