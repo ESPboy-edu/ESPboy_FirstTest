@@ -57,7 +57,7 @@ void setup(){
   mcp.digitalWrite(csTFTMCP23017pin, LOW);
   tft.initR(INITR_144GREENTAB);
   delay (100);
-  tft.setRotation(2);
+  tft.setRotation(0);
   tft.fillScreen(ST77XX_BLACK);
 
 //draw ESPboylogo  
@@ -74,16 +74,15 @@ void setup(){
   tone(SOUNDPIN, 100, 100);
   delay(100);
   noTone(SOUNDPIN);
-  digitalWrite(SOUNDPIN, HIGH);
 
 //OLED init
   u8x8.begin();
   u8x8.setFont(u8x8_font_chroma48medium8_r);  
 
 //DAC init 
-dac.begin(0x62);
+dac.begin(0x60);
 delay (100);
-dac.setVoltage(255, false);
+dac.setVoltage(4095, false);
 
 //clear TFT
   delay(2000);
@@ -92,8 +91,9 @@ dac.setVoltage(255, false);
 
 
 void loop(){ 
- int8_t countled;
- int8_t static rnd=0;
+ uint8_t countled;
+ uint8_t static rnd=0;
+ uint16_t static lcdbright = 700;
  u8x8.setCursor(0,0);
  countled=0;
  
@@ -104,7 +104,8 @@ void loop(){
        countled++;}
  }
 
- if (countled){
+ if (countled)
+ {
     if (rnd==0) {
       pixels.setPixelColor(0, pixels.Color(countled*20, 0, 0)); 
       tft.setTextColor(ST77XX_RED); 
@@ -124,11 +125,15 @@ void loop(){
     tft.println("PRESSED");
     tft.fillRect(0,64,16,16,ST77XX_BLACK);
     tft.println(countled);
-    tone(SOUNDPIN, countled*150);}
- else{ 
+    tone(SOUNDPIN, countled*150);
+    lcdbright += 10;    
+    if (lcdbright > 700) lcdbright = 300;
+    dac.setVoltage(lcdbright, false);
+ }
+ else
+ { 
     rnd=random(0,3);
     noTone(SOUNDPIN);
-//    digitalWrite(SOUNDPIN, HIGH);
     pixels.setPixelColor(0, pixels.Color(0, 0, 0)); 
     tft.setCursor(0, 0);
     tft.setTextSize(1);
@@ -136,6 +141,10 @@ void loop(){
     tft.fillRect(40,0,70,8,ST77XX_BLACK);
     tft.fillRect(0,48,120,32,ST77XX_BLACK);
     tft.println(millis());
+    tft.setCursor(0, 8);
+    tft.print("TFT brt:"); 
+    tft.fillRect(40,8,70,16,ST77XX_BLACK);
+    tft.print(lcdbright); 
  }
  pixels.show();
  delay(100);
