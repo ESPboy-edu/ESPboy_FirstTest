@@ -16,12 +16,13 @@
 //PINS
 #define LEDPIN         D4
 #define SOUNDPIN       D3
+#define LEDLOCK        9
 
 
 //SPI for LCD
 #define csTFTMCP23017pin 8
 #define TFT_RST       -1
-#define TFT_DC        D8
+#define TFT_DC        D0
 #define TFT_CS        -1
 
 //FOR OLED
@@ -38,12 +39,6 @@ void setup(){
   delay (100);
   WiFi.mode(WIFI_OFF); // to safe some battery power
 
-//LED init
-  pinMode(LEDPIN, OUTPUT);
-  pixels.begin();
-  delay (100);
-  pixels.setPixelColor(0, pixels.Color(0,0,0));
-  pixels.show();
 
 //buttons on mcp23017 init
   mcp.begin(MCP23017address);
@@ -51,6 +46,15 @@ void setup(){
   for (int i=0;i<8;i++){  
      mcp.pinMode(i, INPUT);
      mcp.pullUp(i, HIGH);}
+     
+//LED init
+  mcp.pinMode(LEDLOCK, OUTPUT);
+  mcp.digitalWrite(LEDLOCK, HIGH); 
+  pinMode(LEDPIN, OUTPUT);
+  pixels.begin();
+  delay (100);
+  pixels.setPixelColor(0, pixels.Color(0,0,0));
+  pixels.show();
 
 //TFT init     
   mcp.pinMode(csTFTMCP23017pin, OUTPUT);
@@ -104,8 +108,7 @@ void loop(){
        countled++;}
  }
 
- if (countled)
- {
+ if (countled){      
     if (rnd==0) {
       pixels.setPixelColor(0, pixels.Color(countled*20, 0, 0)); 
       tft.setTextColor(ST77XX_RED); 
@@ -127,7 +130,7 @@ void loop(){
     tft.println(countled);
     tone(SOUNDPIN, countled*150);
     lcdbright += 10 * countled;    
-    if (lcdbright > 700) lcdbright = 300;
+    if (lcdbright > 650) lcdbright = 450;
     dac.setVoltage(lcdbright, false);
  }
  else
