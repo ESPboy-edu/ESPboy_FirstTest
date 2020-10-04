@@ -1,21 +1,23 @@
+# Try "First test" to check your ESPboy after assembling
 www.espboy.com project
 
-Try "First test" to check your ESPboy after assembling
+1. Install Arduino IDE https://www.arduino.cc/en/Main/Software
 
-Install Arduino IDE https://www.arduino.cc/en/Main/Software
+2. Install the WeMos D1 mini ESP866 board to your Arduino IDE https://www.instructables.com/Wemos-ESP8266-Getting-Started-Guide-Wemos-101/
 
-Install the WeMos D1 mini ESP866 board to your Arduino IDE https://www.instructables.com/Wemos-ESP8266-Getting-Started-Guide-Wemos-101/
+3. Install all the libs for ESPboy from here https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries
 
-Install all the libs for ESPboy from here https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries
+4. Select the WeMos D1 mini board in the Arduino IDE and compile this code
 
-Select the WeMos D1 mini board in the Arduino IDE and compile this code
-
-Test ESPboy hardware:
+5. Test ESPboy hardware:
 - Power on
 - 8 buttons
 - Display TFT and its backlit
 - RGB led
 - Buzzer/Speaker
+
+6. Have fun :)
+
 
 
 MIT License
