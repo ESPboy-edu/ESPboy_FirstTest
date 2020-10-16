@@ -12,8 +12,8 @@ void setup(){
 
 void loop(){ 
  uint8_t keypressed;
- uint8_t static rnd = 0;
- uint16_t static lcdbright = 700;
+ static uint8_t rnd = 0;
+ static uint16_t lcdbright = 700;
  
  keypressed=myESPboy.getKeys();
 
@@ -45,7 +45,7 @@ void loop(){
     myESPboy.playTone(keypressed*30);
     
     lcdbright += 30;    
-    if (lcdbright > 1200) lcdbright = 400;
+    if (lcdbright > 700) lcdbright = 400;
     myESPboy.dac.setVoltage(lcdbright, false);
  }
  
