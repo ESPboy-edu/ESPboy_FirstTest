@@ -33,9 +33,11 @@ www.espboy.com project
 
 6. For sound use playTone(frequency, duration), playTone (frequency) and noPlayTone() methods of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
 
-7. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 
 
-Have FUN!
+8. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+
+9. Have FUN! )
 
 Regards,
 Roman
