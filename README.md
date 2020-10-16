@@ -19,7 +19,7 @@ www.espboy.com project
 6. Have fun :)
 
 
-# Try "First test" to start you own program
+# Try "First test" to start programming
 
 1. Use this example to start coding with ESPboy
 
