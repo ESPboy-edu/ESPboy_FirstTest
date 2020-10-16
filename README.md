@@ -19,6 +19,28 @@ www.espboy.com project
 6. Have fun :)
 
 
+# Try "First test" to start you own program
+
+1. Use this example to start coding with ESPboy
+
+2. To init use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
+
+3. For doing graphics use methods of TFT_eSPI class https://github.com/Bodmer/TFT_eSPI or adafruit ST7735 lib https://github.com/adafruit/Adafruit-ST7735-Library 
+
+4. For buttons use getkeys() of ESPboyInit and keypressed&PAD_LEFT, keypressed&PAD_RIGHT and so on to understand what key is exactly pressed
+
+5. For LED use ESPboy_LED class https://github.com/ESPboy-edu/ESPboy_Classes or NeoPixel https://github.com/adafruit/Adafruit_NeoPixel
+
+6. For sound use playTone(frequency, duration), playTone (frequency) and noPlayTone() methods of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
+
+7. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+
+Have FUN!
+
+Regards,
+Roman
+//
+
 
 MIT License
 
