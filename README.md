@@ -35,9 +35,17 @@ www.espboy.com project
 
 7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 
 
-8. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+8. To upload data (files) to internal flash file system use Arduino IDE plugins: 
 
-9. Have FUN! )
+a) Little FS -  https://github.com/earlephilhower/arduino-esp8266littlefs-plugin
+
+b) SPIFFS - https://github.com/esp8266/arduino-esp8266fs-plugin
+
+9. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
+
+10. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+
+11. Have FUN! )
 
 Regards,
 Roman
