@@ -7,7 +7,7 @@ www.espboy.com project
 
 3. Install all the libs for ESPboy from here https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries
 
-4. Select the WeMos D1 mini board in the Arduino IDE and compile this code
+4. Select the "LOLIN(WEMOS) D1 R2 & mini" board in the Arduino IDE and compile this code
 
 5. Test ESPboy hardware:
 - Power on
