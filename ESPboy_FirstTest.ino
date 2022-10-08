@@ -4,16 +4,17 @@
 ESPboyInit myESPboy;
 ESPboyLED myLED;
 
+uint16_t lcdbright = 4095;
+
 void setup(){
   myESPboy.begin("First test");
-  myLED.begin();
+  myLED.begin(&myESPboy.mcp);
 }
 
 
 void loop(){ 
  uint8_t keypressed;
  static uint8_t rnd = 0;
- static uint16_t lcdbright = 700;
  
  keypressed=myESPboy.getKeys();
 
@@ -43,9 +44,9 @@ void loop(){
     if (keypressed&PAD_LFT) myESPboy.tft.println("LFT  ");
     
     myESPboy.playTone(keypressed*30);
-    
-    lcdbright += 30;    
-    if (lcdbright > 700) lcdbright = 400;
+
+    lcdbright += 100;    
+    if (lcdbright > 4095) lcdbright = 3000;
     myESPboy.dac.setVoltage(lcdbright, false);
  }
  
@@ -60,6 +61,7 @@ void loop(){
     myESPboy.tft.setCursor(0, 8);
     myESPboy.tft.print("TFT brt:"); 
     myESPboy.tft.print(lcdbright); 
+    myESPboy.dac.setVoltage(4095, false);
  }
  
  delay(200);
