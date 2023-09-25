@@ -8,6 +8,7 @@ v1.0
 
 void ESPboyMCP::begin() {
 	Wire.begin();
+    Wire.setClock(400000);
 	writeRegister(0x00,0xff);
 	writeRegister(0x01,0xff);
 }
