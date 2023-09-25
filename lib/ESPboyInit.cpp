@@ -9,8 +9,8 @@ v1.0
 
 ESPboyInit::ESPboyInit(){};
 
-void ESPboyInit::begin(char *appName) {
-  Serial.begin(115200); //serial init
+void ESPboyInit::begin(const char *appName) {
+  //Serial.begin(115200); //serial init
   WiFi.mode(WIFI_OFF); // to safe battery power
 
 //DAC init and backlit off
@@ -19,27 +19,31 @@ void ESPboyInit::begin(char *appName) {
   dac.setVoltage(0, false);
 
 //mcp23017 init for buttons, LED LOCK and TFT Chip Select pins
-  mcp.begin(MCP23017address);
+  mcp.begin();
   delay(100);
-  
   for (int i=0;i<8;i++){  
      mcp.pinMode(i, INPUT);
      mcp.pullUp(i, HIGH);}
 
+//LED init
+  myLED.begin(&this->mcp);
+  myLED.setRGB(0,0,0);
+
 //sound init and test
   pinMode(SOUNDPIN, OUTPUT);
-  playTone(200, 100); 
-  delay(100);
-  playTone(100, 100);
-  delay(100);
-  noPlayTone();
+  //playTone(200, 100); 
+  //delay(100);
+  //playTone(100, 100);
+  //delay(100);
+  //noPlayTone();
   
 //LCD TFT init
   mcp.pinMode(CSTFTPIN, OUTPUT);
   mcp.digitalWrite(CSTFTPIN, LOW);
   tft.begin();
+  tft.setSwapBytes(true);
   delay(100);
-  tft.setRotation(0);
+  //tft.setRotation(0);
   tft.fillScreen(TFT_BLACK);
 
 //draw ESPboylogo  
@@ -53,13 +57,11 @@ void ESPboyInit::begin(char *appName) {
     dac.setVoltage(bcklt, false);
     delay(10);}
 
+  delay(1000);
+
 //clear TFT and backlit on high
   dac.setVoltage(4095, true);
   tft.fillScreen(TFT_BLACK);
-
-//LED pin LOCK OFF
-  mcp.pinMode(LEDLOCK, OUTPUT);
-  mcp.digitalWrite(LEDLOCK, HIGH); 
 };
 
 

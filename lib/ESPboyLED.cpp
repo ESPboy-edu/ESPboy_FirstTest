@@ -6,7 +6,7 @@ for www.ESPboy.com project by RomanS
 #include "ESPboyLED.h"
 
 
-void ESPboyLED::begin(Adafruit_MCP23017 *mcpGUI){
+void ESPboyLED::begin(ESPboyMCP *mcpGUI){
   mcp = mcpGUI;
   pinMode(LEDPIN, OUTPUT);
   mcp->pinMode(LEDLOCK, OUTPUT);
@@ -80,47 +80,42 @@ uint8_t ESPboyLED::getB(){
 }
 
 
-#define T0H (F_CPU/2000000)
-#define T1H (F_CPU/833333)
-#define TT0T (F_CPU/400000)
- 
-#define PINMASK (1<<LEDPIN) 
- 
- 
-void ICACHE_RAM_ATTR ESPboyLED::ledset(uint8_t rled, uint8_t gled, uint8_t bled) {
- static uint_fast32_t i, t, c, startTime, pixel;
- static uint_fast32_t mask; 
- static uint8_t rled_, gled_, bled_;
- static uint32_t timer;
- 
- if(!getState()) return;
- 
- if(timer+10>millis()) return;
- timer=millis();
- 
- if(rled_==rled && gled_==gled && bled_==bled) return;
- rled_=rled; gled_=gled; bled_=bled;
-
-  GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, PINMASK);
-  mcp->digitalWrite(LEDLOCK, HIGH); 
-  pixel = (gled<<16) + (rled<<8) + bled;
-  mask = 0x800000;
   
-  os_intr_lock();
+  #define t0h  (32*(F_CPU/80000000))  // 0.4us
+  #define t1h  (64*(F_CPU/80000000))  // 0.8us
+  #define ttot (100*(F_CPU/80000000)) // 1.25us
+
+
+void ICACHE_RAM_ATTR ESPboyLED::ledset(uint8_t rled, uint8_t gled, uint8_t bled) {
+ static uint8_t rstore=0xFF, gstore=0xFF, bstore=0xFF;
+ static uint_fast32_t i, t, c, startTime, pixel, mask;
+ static uint8_t cpuFreq;
+ static const uint32_t pinMask = 1<<LEDPIN;
+  
+  if(rled==rstore && gled==gstore && bled==bstore) return;
+  
+  rstore=rled;
+  gstore=gled;
+  bstore=bled;
+  
+  GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, pinMask);
+  mcp->digitalWrite(LEDLOCK, HIGH); 
+  
+  pixel = (gled<<16) + (rled<<8) + bled;
+  mask = 0x800000; 
   startTime = 0;
+  os_intr_lock();
   for (i=0; i<24; i++){
-    if (pixel & mask) t = T1H;
-    else t = T0H;
-    while (((c=ESP.getCycleCount()) - startTime) < TT0T);// Wait for the previous bit to finish
-    GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, PINMASK);      // digitalWrite HIGH 
+    if (pixel & mask) t = t1h;
+    else t = t0h;
+    while (((c=ESP.getCycleCount()) - startTime) < ttot);// Wait for the previous bit to finish
+    GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, pinMask);      // digitalWrite HIGH 
     startTime = c;   
     while (((c=ESP.getCycleCount()) - startTime) < t);   // Wait for high time to finish
-    GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, PINMASK);      // digitalWrite LOW
+    GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, pinMask);      // digitalWrite LOW
     mask>>=1;
   }
   os_intr_unlock();
-  
-  GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, PINMASK);
-
+  GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, pinMask); 
   mcp->digitalWrite(LEDLOCK, LOW); 
 }
