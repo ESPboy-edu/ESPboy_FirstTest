@@ -17,12 +17,16 @@ v1.0
 
 class ESPboyMCP{
 
+protected:
+  bool detectedDAC = false;
+  bool readyDAC();
+  uint8_t readRegister      (const uint8_t address, uint8_t addr);
+  uint8_t writeRegisterMode (const uint8_t address, uint16_t value, uint8_t reg);
+  void writeRegister        (const uint8_t address, uint8_t regAddr, uint8_t regValue);
+  void updateRegisterBit    (const uint8_t address, uint8_t pin, uint8_t pValue, uint8_t portAaddr, uint8_t portBaddr);
 public:
   void begin();
-  uint8_t setDAC(const uint16_t value, uint8_t reg);
-  uint8_t readRegister(uint8_t addr);
-  void writeRegister(uint8_t regAddr, uint8_t regValue);
-  void updateRegisterBit(uint8_t pin, uint8_t pValue, uint8_t portAaddr, uint8_t portBaddr);
+  int8_t writeDAC(uint16_t value, const bool eeprom);
   void pinMode(uint8_t p, uint8_t d);
   void pullUp(uint8_t p, uint8_t d);
   void digitalWrite(uint8_t pin, uint8_t d);

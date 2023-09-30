@@ -9,7 +9,6 @@ v1.0
 #define ESPboy_Init
 
 #include <Arduino.h>
-#include <Adafruit_MCP4725.h>  //to control the LCD display backlit
 #include "ESPboyMCP.h"
 #include "ESPboyMCP.cpp"
 #include "ESPboyLED.h"
@@ -42,7 +41,6 @@ using fs::FS;
 class ESPboyInit{
 
 public:
-  Adafruit_MCP4725 dac;
   ESPboyMCP mcp;
   TFT_eSPI tft;
   ESPboyLED myLED;
