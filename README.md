@@ -1,6 +1,16 @@
 # Try "First test" to check your ESPboy after assembling
 www.espboy.com project
 
+There are 3 versions:
+
+1. ESPboy_FristTest_AdafruitLibs - uses only standard Adafruit livraries to control ESPboy hardware (LED, buttons, sound, display)
+
+2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
+
+3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX](https://github.com/lovyan03/LovyanGFX) graphics library for display
+
+# To start work with ESPboy
+
 1. Install Arduino IDE https://www.arduino.cc/en/Main/Software
 
 2. Install the WeMos D1 mini ESP866 board to your Arduino IDE https://www.instructables.com/Wemos-ESP8266-Getting-Started-Guide-Wemos-101/
