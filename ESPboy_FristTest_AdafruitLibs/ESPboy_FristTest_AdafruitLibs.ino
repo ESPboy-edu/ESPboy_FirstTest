@@ -1,4 +1,7 @@
 /*
+
+ESPboy FIRST TEST - Adafruit libs only
+
 Try "First test" to check your ESPboy hardware and start coding!
 In this example we are using standard Adafruit Arduino IDE libraries
 
