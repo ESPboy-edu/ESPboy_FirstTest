@@ -5,6 +5,9 @@ https://hackaday.io/project/164830-espboy-games-iot-stem-for-education-fun
 v1.0
 */
 
+#ifndef ESPboy_Init_cpp
+#define ESPboy_Init_cpp
+
 #include "ESPboyInit.h"
 
 ESPboyInit::ESPboyInit(){};
@@ -70,3 +73,5 @@ void ESPboyInit::playTone(uint16_t frq) { tone(SOUNDPIN, frq); }
 void ESPboyInit::noPlayTone() { noTone(SOUNDPIN); }
 
 uint8_t ESPboyInit::getKeys() { return (~mcp.readGPIOAB() & 255); }
+
+#endif
