@@ -29,7 +29,6 @@ void ESPboyInit::begin(const char *appName) {
 
 //LED init
   myLED.begin(&this->mcp);
-  myLED.setRGB(0,0,0);
 
 //sound init and test
   pinMode(SOUNDPIN, OUTPUT);

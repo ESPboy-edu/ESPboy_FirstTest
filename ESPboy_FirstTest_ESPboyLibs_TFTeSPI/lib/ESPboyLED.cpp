@@ -14,7 +14,10 @@ void ESPboyLED::begin(ESPboyMCP *mcpGUI){
   LEDr = 0; 
   LEDg = 0; 
   LEDb = 0;
-  ledset(LEDr, LEDg, LEDb);
+  delay(100);
+  ledset(1, 1, 1);
+  delay(100);
+  ledset(0, 0, 0);
 }
 
 
