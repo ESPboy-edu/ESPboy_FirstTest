@@ -3,7 +3,7 @@ www.espboy.com project
 
 There are 3 versions:
 
-1. ESPboy_FristTest_AdafruitLibs - uses only standard Adafruit livraries to control ESPboy hardware (LED, buttons, sound, display)
+1. ESPboy_FristTest_AdafruitLibs - uses only standard Adafruit libraries to control ESPboy hardware (LED, buttons, sound, display)
 
 2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
 
@@ -11,7 +11,7 @@ There are 3 versions:
 
 # To start work with ESPboy
 
-1. Install Arduino IDE https://www.arduino.cc/en/Main/Software
+1. Install Arduino IDE legacy 1.8.n recommended (not v2.n IDE) https://www.arduino.cc/en/Main/Software
 
 2. Install the WeMos D1 mini ESP866 board to your Arduino IDE https://www.instructables.com/Wemos-ESP8266-Getting-Started-Guide-Wemos-101/
 
@@ -27,6 +27,13 @@ There are 3 versions:
 - Buzzer/Speaker
 
 6. Have fun :)
+
+7. For better experience you have to istall to your Arduino IDE ["Little FS file uploader plugin"](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin) and ["ESP exception decoder plugin"](https://github.com/me-no-dev/EspExceptionDecoder)
+
+8. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
+
+9. Use recommended Arduino IDE settings
+![1](ESPboy recommended ArduinoIDE settings.png) 
 
 
 # Try "First test" to start programming
