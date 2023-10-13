@@ -34,7 +34,7 @@ There are 3 versions:
 
 9. Use recommended Arduino IDE settings
     
-![1](ESPboy recommended ArduinoIDE settings.png) 
+![1](/ESPboy recommended ArduinoIDE settings.png) 
 
 
 # Try "First test" to start programming
