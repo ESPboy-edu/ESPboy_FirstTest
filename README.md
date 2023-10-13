@@ -32,9 +32,9 @@ There are 3 versions:
 
 8. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
 
-9. Use recommended Arduino IDE settings
+9. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/ESPboy%20recommended%20ArduinoIDE%20settings.png)
     
-![1](/ESPboy recommended ArduinoIDE settings.png) 
+
 
 
 # Try "First test" to start programming
@@ -43,7 +43,7 @@ There are 3 versions:
 
 2. To init use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
 
-3. For doing graphics use methods of TFT_eSPI class https://github.com/Bodmer/TFT_eSPI or adafruit ST7735 lib https://github.com/adafruit/Adafruit-ST7735-Library 
+3. For doing graphics use methods of TFT_eSPI class https://github.com/Bodmer/TFT_eSPI or adafruit ST7735 lib https://github.com/adafruit/Adafruit-ST7735-Library  or LovyanGFX lib https://github.com/lovyan03/LovyanGFX
 
 4. For buttons use getkeys() of ESPboyInit and keypressed&PAD_LEFT, keypressed&PAD_RIGHT and so on to understand what key is exactly pressed
 
