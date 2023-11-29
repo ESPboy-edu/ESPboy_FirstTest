@@ -9,6 +9,8 @@ There are 3 versions:
 
 3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX](https://github.com/lovyan03/LovyanGFX) graphics library for display
 
+4. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
+
 # To start work with ESPboy
 
 1. Install Arduino IDE legacy 1.8.n recommended (not v2.n IDE) https://www.arduino.cc/en/Main/Software
