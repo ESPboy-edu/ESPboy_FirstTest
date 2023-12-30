@@ -34,9 +34,9 @@ There are 3 versions:
 
 8. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
 
-9. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/ESPboy%20recommended%20ArduinoIDE%20settings.png)
+9. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/settings.png)
 
-![Arduino IDE settings](ESPboy recommended ArduinoIDE settings.png)
+![Arduino IDE settings](settings.png)
 
 
 
