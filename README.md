@@ -3,11 +3,11 @@ www.espboy.com project
 
 There are 3 versions:
 
-1. ESPboy_FristTest_AdafruitLibs - uses only standard [Adafruit libraries (slow and poor, but simple)](https://github.com/adafruit/Adafruit-ST7735-Library) to control ESPboy hardware (LED, buttons, sound, display)
+1. ESPboy_FristTest_AdafruitLibs - does not use custom ESPboy libs and uses only standard [Adafruit libraries (slow and poor, but simple)](https://github.com/adafruit/Adafruit-ST7735-Library) to control ESPboy hardware (LED, buttons, sound, display)
 
-2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI (fastest)](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
+2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- *uses ESPboy libs* and [TFT_eSPI (fastest)](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
 
-3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
+3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- *uses ESPboy libs* and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
 
 4. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
 
@@ -62,11 +62,15 @@ b) [SPIFFS](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
 9. To upload to ESPboy already compiled ".bin" files, use [Flash Download Tools](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32)
 
-10. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
+10. You can try [alternate ESPboy lib, made by Steph](https://www.arduino.cc/reference/en/libraries/espboy/) and [instructions](https://m1cr0lab-espboy.github.io/ESPboy)
 
-11. Ask questions in [ESPboy forum](https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x)
+11. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
 
-12. Have FUN! )
+12. Use [WebAppStore](https://espboy.m1cr0lab.com/demo/appstore/) and WiFiAppStore directly from the device (first install "AppStore2 (OTA2)" from the WebAppStore)
+
+13. Ask questions in [ESPboy forum](https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x)
+
+14. Have FUN! )
 
 Regards,
 Roman
