@@ -3,11 +3,11 @@ www.espboy.com project
 
 There are 3 versions:
 
-1. ESPboy_FristTest_AdafruitLibs - uses only standard Adafruit libraries to control ESPboy hardware (LED, buttons, sound, display)
+1. ESPboy_FristTest_AdafruitLibs - uses only standard [Adafruit libraries (slow and poor, but simple)](https://github.com/adafruit/Adafruit-ST7735-Library) to control ESPboy hardware (LED, buttons, sound, display)
 
-2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
+2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI (fastest)](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
 
-3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX](https://github.com/lovyan03/LovyanGFX) graphics library for display
+3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
 
 4. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
 
