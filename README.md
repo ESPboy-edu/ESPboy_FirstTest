@@ -62,11 +62,13 @@ a) Little FS -  https://github.com/earlephilhower/arduino-esp8266littlefs-plugin
 
 b) SPIFFS - https://github.com/esp8266/arduino-esp8266fs-plugin
 
-9. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
+9. To upload to ESPboy already compiled ".bin" files, use [Flash Download Tools](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32)
 
-10. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+10. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
 
-11. Have FUN! )
+11. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+
+12. Have FUN! )
 
 Regards,
 Roman
