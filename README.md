@@ -68,9 +68,9 @@ b) [SPIFFS](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
 12. Use [WebAppStore](https://espboy.m1cr0lab.com/demo/appstore/) and WiFiAppStore directly from the device (first install "AppStore2 (OTA2)" from the WebAppStore)
 
-13. Ask questions in [ESPboy forum](https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x)
+13. Ask questions in [ESPboy forum](https://community.arduboy.com) and ESPboy [discord chat](https://discord.gg/kMWhY2x)
 
-14. Have FUN! )
+14. Have FUN! :)
 
 Regards,
 Roman
