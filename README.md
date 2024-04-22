@@ -42,7 +42,7 @@ There are 3 versions:
 
 1. Use this example to start coding with ESPboy
 
-2. To init ESPboy hardware use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
+2. To init ESPboy hardware use begin() of [ESPboy_Init class](https://github.com/ESPboy-edu/ESPboy_Classes)
 
 3. For doing graphics use methods of [TFT_eSPI class](https://github.com/Bodmer/TFT_eSPI) or [adafruit ST7735 lib](https://github.com/adafruit/Adafruit-ST7735-Library) or [LovyanGFX lib](https://github.com/lovyan03/LovyanGFX) according to your GFX-way choice
 
@@ -52,19 +52,19 @@ There are 3 versions:
 
 6. For sound use playTone(frequency, duration), playTone (frequency) and noPlayTone() methods of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
 
-7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 
+7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 (not supported in ESPboy easy DIY versions)
 
 8. To upload data (files) to internal flash file system use Arduino IDE plugins: 
 
-a) Little FS -  https://github.com/earlephilhower/arduino-esp8266littlefs-plugin
+a) [Little FS](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin)
 
-b) SPIFFS - https://github.com/esp8266/arduino-esp8266fs-plugin
+b) [SPIFFS](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
 9. To upload to ESPboy already compiled ".bin" files, use [Flash Download Tools](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32)
 
 10. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
 
-11. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+11. Ask questions in [ESPboy forum](https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x)
 
 12. Have FUN! )
 
