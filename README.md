@@ -28,13 +28,11 @@ There are 3 versions:
 - RGB led
 - Buzzer/Speaker
 
-6. Have fun :)
+6. For better experience you have to istall to your Arduino IDE ["Little FS file uploader plugin"](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin) and ["ESP exception decoder plugin"](https://github.com/me-no-dev/EspExceptionDecoder)
 
-7. For better experience you have to istall to your Arduino IDE ["Little FS file uploader plugin"](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin) and ["ESP exception decoder plugin"](https://github.com/me-no-dev/EspExceptionDecoder)
+7. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
 
-8. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
-
-9. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/settings.png)
+8. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/settings.png)
 
 ![Arduino IDE settings](settings.png)
 
@@ -44,9 +42,9 @@ There are 3 versions:
 
 1. Use this example to start coding with ESPboy
 
-2. To init use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
+2. To init ESPboy hardware use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
 
-3. For doing graphics use methods of TFT_eSPI class https://github.com/Bodmer/TFT_eSPI or adafruit ST7735 lib https://github.com/adafruit/Adafruit-ST7735-Library  or LovyanGFX lib https://github.com/lovyan03/LovyanGFX
+3. For doing graphics use methods of [TFT_eSPI class](https://github.com/Bodmer/TFT_eSPI) or [adafruit ST7735 lib](https://github.com/adafruit/Adafruit-ST7735-Library) or [LovyanGFX lib](https://github.com/lovyan03/LovyanGFX) according to your GFX-way choice
 
 4. For buttons use getkeys() of ESPboyInit and keypressed&PAD_LEFT, keypressed&PAD_RIGHT and so on to understand what key is exactly pressed
 
