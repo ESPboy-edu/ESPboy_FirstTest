@@ -39,6 +39,8 @@ There are 3 versions:
 
 # ESP8266 doc links
 
+ESPboy uses ESP8266 MCU which is uses Xtensa Tensilica 32-Bit Risc CPU LX106 core
+
 1. [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/_/downloads/en/latest/pdf/)
 2. [ESP8266 Arduino Core](https://arduino-esp8266.readthedocs.io/en/stable/ideoptions.html)
 3. [ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
