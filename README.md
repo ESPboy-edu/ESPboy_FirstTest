@@ -1,7 +1,7 @@
 # Try "First test" to check your ESPboy after assembling
 www.espboy.com project
 
-There are 3 versions:
+There are 4 versions:
 
 1. ESPboy_FristTest_AdafruitLibs - does not use custom ESPboy libs and uses only standard [Adafruit libraries (slow and poor, but simple)](https://github.com/adafruit/Adafruit-ST7735-Library) to control ESPboy hardware (LED, buttons, sound, display)
 
@@ -9,7 +9,9 @@ There are 3 versions:
 
 3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- *uses ESPboy libs* and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
 
-4. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
+4. ESPboy_FirstTest_ESPboyLibs_ArduinoGFX -- *uses ESPboy libs* and [GFX_Library_for_Arduino (cool)](https://github.com/moononournation/Arduino_GFX) graphics library for display
+   
+6. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
 
 # To start work with ESPboy
 
