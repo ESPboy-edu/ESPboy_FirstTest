@@ -44,7 +44,7 @@ There are 3 versions:
 3. [ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 4. [ESP8266_RTOS_SDK (IDF Style) Programming Guide](https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/get-started/index.html)
 5. [Tensilica 32-Bit Risc CPU Xtensa LX106](https://softwareg.com.au/blogs/computer-hardware/tensilica-32-bit-risc-cpu-xtensa-lx106)
-6. [Xtensa® Instruction Set Architecture ISA Summary](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf)
+6. [Xtensa® Instruction Set Architecture ISA Summary](https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf)
 
 
 
