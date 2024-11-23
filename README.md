@@ -3,11 +3,11 @@ www.espboy.com project
 
 There are 3 versions:
 
-1. ESPboy_FristTest_AdafruitLibs - uses only standard Adafruit libraries to control ESPboy hardware (LED, buttons, sound, display)
+1. ESPboy_FristTest_AdafruitLibs - does not use custom ESPboy libs and uses only standard [Adafruit libraries (slow and poor, but simple)](https://github.com/adafruit/Adafruit-ST7735-Library) to control ESPboy hardware (LED, buttons, sound, display)
 
-2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- uses ESPboy libs and [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
+2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- *uses ESPboy libs* and [TFT_eSPI (fastest)](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
 
-3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- uses ESPboy libs and [LovyanGFX](https://github.com/lovyan03/LovyanGFX) graphics library for display
+3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- *uses ESPboy libs* and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
 
 4. ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
 
@@ -28,15 +28,25 @@ There are 3 versions:
 - RGB led
 - Buzzer/Speaker
 
-6. Have fun :)
+6. For better experience you have to istall to your Arduino IDE ["Little FS file uploader plugin"](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin) and ["ESP exception decoder plugin"](https://github.com/me-no-dev/EspExceptionDecoder)
 
-7. For better experience you have to istall to your Arduino IDE ["Little FS file uploader plugin"](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin) and ["ESP exception decoder plugin"](https://github.com/me-no-dev/EspExceptionDecoder)
+7. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
 
-8. If you want to have professinal development tool much more powerfull than standard Arduino IDE, learn ["VS Code" + "PlatformIO"](https://circuitsgeek.com/guides-and-how-to/programming-esp8266-using-vs-code-and-platformio/)
+8. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/settings.png)
 
-9. [Use recommended Arduino IDE settings](https://github.com/ESPboy-edu/ESPboy_FirstTest/blob/master/ESPboy%20recommended%20ArduinoIDE%20settings.png)
+![Arduino IDE settings](settings.png)
 
-![Arduino IDE settings](ESPboy recommended ArduinoIDE settings.png)
+
+# ESP8266 doc links
+
+ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit RISC CPU LX106 core
+
+1. [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/_/downloads/en/latest/pdf/)
+2. [ESP8266 Arduino Core](https://arduino-esp8266.readthedocs.io/en/stable/ideoptions.html)
+3. [ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+4. [ESP8266_RTOS_SDK (IDF Style) Programming Guide](https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/get-started/index.html)
+5. [Tensilica 32-Bit Risc CPU Xtensa LX106](https://softwareg.com.au/blogs/computer-hardware/tensilica-32-bit-risc-cpu-xtensa-lx106)
+6. [Xtensa® Instruction Set Architecture ISA Summary](https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf)
 
 
 
@@ -44,9 +54,9 @@ There are 3 versions:
 
 1. Use this example to start coding with ESPboy
 
-2. To init use begin() of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
+2. To init ESPboy hardware use begin() of [ESPboy_Init class](https://github.com/ESPboy-edu/ESPboy_Classes)
 
-3. For doing graphics use methods of TFT_eSPI class https://github.com/Bodmer/TFT_eSPI or adafruit ST7735 lib https://github.com/adafruit/Adafruit-ST7735-Library  or LovyanGFX lib https://github.com/lovyan03/LovyanGFX
+3. For doing graphics use methods of [TFT_eSPI class](https://github.com/Bodmer/TFT_eSPI) or [adafruit ST7735 lib](https://github.com/adafruit/Adafruit-ST7735-Library) or [LovyanGFX lib](https://github.com/lovyan03/LovyanGFX) according to your GFX-way choice
 
 4. For buttons use getkeys() of ESPboyInit and keypressed&PAD_LEFT, keypressed&PAD_RIGHT and so on to understand what key is exactly pressed
 
@@ -54,19 +64,25 @@ There are 3 versions:
 
 6. For sound use playTone(frequency, duration), playTone (frequency) and noPlayTone() methods of ESPboy_Init class https://github.com/ESPboy-edu/ESPboy_Classes 
 
-7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 
+7. To control the LCD backlit use Adafruit MCP4725 library methods https://github.com/adafruit/Adafruit_MCP4725 (not supported in ESPboy easy DIY versions)
 
 8. To upload data (files) to internal flash file system use Arduino IDE plugins: 
 
-a) Little FS -  https://github.com/earlephilhower/arduino-esp8266littlefs-plugin
+a) [Little FS](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin)
 
-b) SPIFFS - https://github.com/esp8266/arduino-esp8266fs-plugin
+b) [SPIFFS](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
-9. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
+9. To upload to ESPboy already compiled ".bin" files, use [Flash Download Tools](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32)
 
-10. Ask questions in ESPboy forum https://community.arduboy.com and ESPboy discord chat https://discord.gg/kMWhY2x
+10. You can try [alternate ESPboy lib, made by Steph](https://www.arduino.cc/reference/en/libraries/espboy/) and [instructions](https://m1cr0lab-espboy.github.io/ESPboy)
 
-11. Have FUN! )
+11. Use ESP8266 Arduino Core documentation https://arduino-esp8266.readthedocs.io/en/latest/index.html
+
+12. Use [WebAppStore](https://espboy.m1cr0lab.com/demo/appstore/) and WiFiAppStore directly from the device (first install "AppStore2 (OTA2)" from the WebAppStore)
+
+13. Ask questions in [ESPboy forum](https://community.arduboy.com) and ESPboy [discord chat](https://discord.gg/kMWhY2x)
+
+14. Have FUN! :)
 
 Regards,
 Roman
