@@ -8,6 +8,7 @@ Preliminary actions:
 - Install Arduino IDE https://www.arduino.cc/en/Main/Software
 - Install the WeMos D1 mini ESP866 board to your Arduino IDE https://www.instructables.com/Wemos-ESP8266-Getting-Started-Guide-Wemos-101/
 - Install all the libs for ESPboy from here https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries
+- Install Arduino_GFX lib https://github.com/moononournation/Arduino_GFX
 - Select the "LOLIN(WEMOS) D1 R2 & mini" board in the Arduino IDE and compile this code
 
 Test ESPboy hardware:
@@ -18,11 +19,6 @@ Test ESPboy hardware:
 - Buzzer/Speaker
 
 Have fun :)
-
-IMPORTANT! 
-if you are using/updating original TFTeSPI library
-you have to edit or replace usersetup.h file in the TFTeSPI folder in your Arduino libraries collection 
-according to this https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h
 */
 
 
