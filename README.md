@@ -1,5 +1,5 @@
-# Try "First test" to check your ESPboy after assembling
-www.espboy.com project
+# Get to work with ESPboy!
+www.espboy.com
 
 # ESP8266 doc links
 
@@ -27,7 +27,7 @@ MicoJS itself https://micojs.github.io
 https://micropython.org
 
 
-# Start using the [Arduino IDE](https://www.arduino.cc) or [PlarformIO](https://platformio.org)
+# Using [Arduino IDE](https://www.arduino.cc) or [PlarformIO](https://platformio.org)
 
 1. Install Arduino IDE legacy 1.8.n recommended (not v2.n IDE) https://www.arduino.cc/en/Main/Software
 
