@@ -17,6 +17,15 @@ ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit 
 
 ESPboy_ArdublockFirstTest -- uses [Ardublock.ru v3](http://ardublock.ru/3/)
    
+# Using MicoJS
+
+MicoJS documentation https://github.com/micojs/micojs.github.io/wiki
+MicoJS itself https://micojs.github.io
+
+# Using MicroPython
+
+https://micropython.org
+
 
 # Start using the [Arduino IDE](https://www.arduino.cc) or [PlarformIO](https://platformio.org)
 
