@@ -5,7 +5,7 @@ www.espboy.com
 
 ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit RISC CPU LX106 core
 
-1. [ESP8266 ESP8266 pinout reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
+1. [ESP8266 pinout reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 2. [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/_/downloads/en/latest/pdf/)
 3. [ESP8266 Arduino Core](https://arduino-esp8266.readthedocs.io/en/stable/ideoptions.html)
 4. [ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
