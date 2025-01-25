@@ -3,7 +3,11 @@ www.espboy.com
 
 # ESP8266 doc links
 
-ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit RISC CPU LX106 core
+- ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit RISC CPU LX106 core
+- To control buttons and LCD's CS pin - I2C GPIO port extender MCP23017 is used
+- At [ESPboy original](https://www.tindie.com/products/espboy/espboy-homebrew-gadget-development-platform/) - I2C DAC MCP4725 is used to control LCD's backlight brightness
+- Sound is connected to D3(GPIO0) pin
+- Neopixel LED is connected to D4(GPIO2) pin
 
 1. [ESP8266 pinout reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 2. [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/_/downloads/en/latest/pdf/)
