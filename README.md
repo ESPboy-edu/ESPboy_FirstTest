@@ -1,13 +1,32 @@
 # Get to work with ESPboy!
 www.espboy.com
 
-# ESP8266 doc links
+# ESPboy tech highlights
 
 - ESPboy uses the ESP8266 microcontroller, which uses the Xtensa Tensilica 32-Bit RISC CPU LX106 core
 - To control buttons and LCD's CS pin - I2C GPIO port extender MCP23017 is used
 - At [ESPboy original](https://www.tindie.com/products/espboy/espboy-homebrew-gadget-development-platform/) - I2C DAC MCP4725 is used to control LCD's backlight brightness
 - Sound is connected to D3(GPIO0) pin
 - Neopixel LED is connected to D4(GPIO2) pin
+
+# ESPboy links
+
+- [ESPboy web](www.espboy.com)
+- [ESPboy Tindie](https://www.tindie.com/stores/espboy/)
+- [ESPboy aliexpress](https://aliexpress.ru/item/1005004755257589.html)
+- [ESPboy:DIY schematic](https://oshwlab.com/ESPboy/espboy_v4-3) 
+- [ESPboy:Kit schematic](https://oshwlab.com/espboy/espboy-easy-v1_copy)
+- [ESPboy breadboard schematic](https://www.instructables.com/ESPboy-DIY-Retro-Gaming-and-Software-Development-M/)
+- [ESPboy WebAppStore](https://espboy.m1cr0lab.com/demo/appstore/)
+- [ESPboy YouTube](https://www.youtube.com/@ESPboy)
+- [ESPboy Discord](https://discord.gg/kXfDQpX)
+- [ESPboy Forum](https://community.espboy.com/)
+- [ESPboy software](https://github.com/ESPboy-edu)
+- [ESPboy Hackaday development blog](https://hackaday.io/project/164830-espboy-retrogamingsoftware-development-mulitool)
+- [Open hardware certification](https://www.openhardware.io/view/786/ESPboy-Games-IoT-STEM-for-education-and-fun-ESP8266-core)
+- [OSHWA certification](https://certification.oshwa.org/ru000001.html)
+
+# ESP8266 (ESPboy MCU) links
 
 1. [ESP8266 pinout reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 2. [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/_/downloads/en/latest/pdf/)
