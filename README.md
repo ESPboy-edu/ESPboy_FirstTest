@@ -35,6 +35,7 @@ www.espboy.com
 5. [ESP8266_RTOS_SDK (IDF Style) Programming Guide](https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/get-started/index.html)
 6. [Tensilica 32-Bit Risc CPU Xtensa LX106](https://softwareg.com.au/blogs/computer-hardware/tensilica-32-bit-risc-cpu-xtensa-lx106)
 7. [Xtensa® Instruction Set Architecture ISA Summary](https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf)
+8. [Xtensa ISA overview](https://dl.espressif.com/github_assets/espressif/xtensa-isa-doc/releases/download/latest/Xtensa.pdf)
 
 
 # Using Ardublock
