@@ -15,9 +15,8 @@ v1.0
 #include "ESPboyLED.cpp"
 #include "ESPboylogo.h"
 
-#define LGFX_ESPBOY 
 #include <LovyanGFX.hpp> 
-#include <LGFX_AUTODETECT.hpp> 
+#include "LGFX_ESP8266_ESPboy.hpp"
 
 #include <ESP8266WiFi.h>       //to control WiFi
 

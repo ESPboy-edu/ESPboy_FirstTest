@@ -86,7 +86,7 @@ There are few ways to use ESPboy + Arduino IDE with different most common Arduin
 
 2. ESPboy_FirstTest_ESPboyLibs_TFTeSPI -- *uses ESPboy libs* and [TFT_eSPI (recommended)](https://github.com/Bodmer/TFT_eSPI?ysclid=ln67tav62z348840877) graphics library for display (be carefull, to force it work properly with ESPboy's display you have to edit parameters in "User_Setup.h" file in TFT_eSPI library folder according [to this](https://github.com/ESPboy-edu/ESPboy_ArduinoIDE_Libraries/blob/master/TFT_eSPI-master/User_Setup.h) )
 
-3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- *uses ESPboy libs* and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display
+3. ESPboy_FirstTest_ESPboyLibs_LovyanGFX -- *uses ESPboy libs* and [LovyanGFX (most advanced)](https://github.com/lovyan03/LovyanGFX) graphics library for display (do not use AUTODETECT, it does not work weel for all ESPboys)
 
 4. ESPboy_FirstTest_ESPboyLibs_ArduinoGFX -- *uses ESPboy libs* and [GFX_Library_for_Arduino (cool)](https://github.com/moononournation/Arduino_GFX) graphics library for display
 
