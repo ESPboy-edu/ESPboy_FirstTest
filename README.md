@@ -77,6 +77,8 @@ https://micropython.org
 
 ![Arduino IDE settings](settings.png)
 
+9. For debugging you will probably need [ESP exception decoder](https://arduino-esp8266.readthedocs.io/en/latest/faq/a02-my-esp-crashes.html) to troubleshoot ESP crashes when running some code
+
 
 # Basic ESPboy examples for Arduino IDE
 
